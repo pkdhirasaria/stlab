@@ -1,3 +1,8 @@
+//download jxl-2.6.12.jar file from google and paste it in the same folder of program
+//for compilation use javac -cp jxl-2.6.12.jar filename.java
+//for execution use java -cp jxl-2.6.12.jar filename
+
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
