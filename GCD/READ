@@ -1,0 +1,6 @@
+To change java version to 1.8
+
+export JAVA_HOME="/home/ise/Selenium_training/jdk1.8.0_101/"
+
+export PATH=$JAVA_HOME/bin:$PATH
+
