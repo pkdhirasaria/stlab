@@ -1,0 +1,46 @@
+<html>
+<head>
+     <title>
+           GCD Calculator
+     </title>
+</head>
+<body>
+     <div align="center">
+           <p>Enter a number</p>
+           <input type="number" id="num1" name="num1">
+           <br>
+           <p>Enter another number<p>
+           <input type="number" id="num2" name="num2"><br>
+           <button id="calc" onclick="calcgcd();">Calculate GCD</button>
+     </div>
+     <script type="text/javascript">
+                function calcgcd()
+                {
+ 
+                     var val1 = document.getElementById('num1').value;
+                     var val2 = document.getElementById('num2').value;
+                     //alert(val1);
+                     //alert(val2);
+                     a=parseInt(val1);
+                     b=parseInt(val2);
+                     while(a!=b)
+                     {
+                           if(a>b)
+                           {
+                                a=a-b;
+                                //document.write(a);
+                           }
+                           else
+                           {
+                                b=b-a;
+                                //document.write(b);
+                           }
+ 
+                     }
+                     alert('The GCD is '+a);
+                }
+ 
+     </script>
+    
+</body>
+</html>
