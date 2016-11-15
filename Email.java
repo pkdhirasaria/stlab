@@ -1,36 +1,40 @@
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.By;
-import java.util.concurrent.TimeUnit;
-
-public class myclass {
-
-
-    public static void main(String[] args) {
-        // declaration and instantiation of objects/variables
-        WebDriver driver = new FirefoxDriver();
-        String baseUrl = "https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1#identifier";
-        String expectedTitle = "Welcome: Mercury Tours";
-        String actualTitle = "";
-
-        // launch Firefox and direct it to the Base URL
-        driver.get(baseUrl);
+import java.util.concurrent.TimeUnit; 
+import org.openqa.selenium.*; 
+import org.openqa.selenium.By; 
+import org.openqa.selenium.firefox.FirefoxDriver; 
+ 
+public class Gmail 
+{ 
+	public static WebDriver driver = null; 
+    public static void main(String[] args) 
+    { 
+    	WebDriver driver = new FirefoxDriver(); 
+    	WebElement element=null;  
+   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+    driver.get("https://mail.google.com/"); 
+   
+    driver.manage().window().maximize(); 
+    
+    driver.findElement(By.id("Email")).sendKeys("2016isys@gmail.com"); 
+    
+    driver.findElement(By.xpath("//*[@id='next']")).click(); 
+    driver.findElement(By.id("Passwd")).sendKeys("piyushagarwal"); 
         
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-      	WebElement emailBox = driver.findElement(By.id("Email"));
-		emailBox.sendKeys("pkdhirasaria");
-		emailBox.submit();
-        // get the actual value of the title
-        
-        
-        WebElement pass = driver.findElement(By.id("Passwd"));
-        pass.sendKeys("123456789");
-        pass.submit();
-//        driver.close();
-       
-        // exit the program explicitly
-  //      System.exit(0);
-    }
-
+    driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);    driver.findElement(By.id("signIn")).click(); 
+    
+    driver.findElement(By.xpath("//div[contains(text(),'COMPOSE')]")).click(); 
+    driver.findElement(By.xpath("//textarea[@name='to']")).sendKeys("pkdhirasaria@gmail.com"); 
+    driver.findElement(By.xpath("//input[@name='subjectbox']")).sendKeys("hello"); 
+    element = driver.findElement(By.xpath("//div[@class='Ar Au']//div")); 
+    element.click(); 
+    element.sendKeys("good evening"); 
+    driver.findElement(By.id(":me")).click(); 
+    for(long i=0;i<10000;i++) 
+	for(long j=0;j<1000000;j++) 
+	{ 
+	 
+	} 
+	System.out.println("ssss"); 
+	driver.get("https://mail.google.com/mail/logout?hl=en"); 
+    } 
 }
