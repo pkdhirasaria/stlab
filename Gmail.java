@@ -18,7 +18,7 @@ public class Gmail
     driver.findElement(By.id("Email")).sendKeys("2016isys@gmail.com"); 
     
     driver.findElement(By.xpath("//*[@id='next']")).click(); 
-    driver.findElement(By.id("Passwd")).sendKeys("piyushagarwal"); 
+    driver.findElement(By.id("Passwd")).sendKeys(""); 
         
     driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);    driver.findElement(By.id("signIn")).click(); 
     
