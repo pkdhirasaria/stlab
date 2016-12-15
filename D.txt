@@ -1,0 +1,8 @@
+export JAVA_HOME="/home/ise/Selenium_training/jdk1.8.0_101"
+export PATH=$JAVA_HOME/bin:$PATH
+java -version
+
+
+
+javac -classpath ~/Selenium_training/selenium-server-standalone-2.53.1.jar gmail.java
+java -classpath ~/Selenium_training/selenium-server-standalone-2.53.1.jar:. gmail

@@ -1,0 +1,52 @@
+package commission;
+import java.util.*;
+import java.util.io.*;
+import java.util.Scanner;
+public class Commission 
+{
+    public static void main(String[] args)
+    {
+        float total;
+        double com=0;
+        Scanner comm = new Scanner(System.in);
+        System.out.println("enter the value for lock,stock,barrel::");
+        int l=comm.nextInt();
+        int s=comm.nextInt();
+        int b=comm.nextInt();
+        //int lock = 0;
+        if(l==-1)
+        {
+            System.out.println("out of range");
+            System.exit(0);
+        }
+        
+       if((l>=1 && l<=70) && (b>=1 && b<=80) && (s>=1 && s<=90))
+            {
+             
+                 total = l*45+s*30+b*25;
+                if(total<=1000)
+                {
+                    com=total*.10f;
+                System.out.println("commission result::" +com);
+                }
+                
+                else if((total>1000) && (total<=1800))
+                {
+                    com=100+(total-1000)*.15f;
+                        System.out.println("commission result::" +com);
+                }
+                else
+                {
+                    com=220+(total-1800)*.2f;
+                    System.out.println("commission result::" +com);
+                }
+                
+            }
+       else
+            System.out.println("sales out of bond::");
+            
+           }
+        
+        
+      }
+ 
